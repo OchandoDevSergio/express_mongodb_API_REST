@@ -10,4 +10,13 @@ router.get('/', async(req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+      const newEmployee = await Employee.create(req.body);
+      res.json(newEmployee);
+  } catch (error) {
+      res.status(500).json({ error: 'Ha ocurrido un error' });
+  }
+})
+
 module.exports = router;
