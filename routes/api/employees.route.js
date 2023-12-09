@@ -19,4 +19,26 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.put('/:employeeId', async (req, res) => {
+  try {
+      const employeeEdit = await Employee.findByIdAndUpdate(
+          req.params.employeeId,
+          req.body,
+          { new: true }
+      );
+      res.json(employeeEdit);
+  } catch (error) {
+      res.status(500).json({ error: 'Ha ocurrido un error' });
+  }
+});
+
+router.delete('/:employeeId', async (req, res) => {
+  try {
+      const employee = await Employee.findByIdAndDelete(req.params.employeeId);
+      res.json(employee);
+  } catch (error) {
+      res.status(500).json({ error: 'Ha ocurrido un error' });
+  }
+})
+
 module.exports = router;
