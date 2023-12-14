@@ -23,13 +23,19 @@ Pasos para lanzar la aplicación:
 
 1- Ejecutamos *Mongod* para levantar el servidor de la base de datos de MongoDB.
 
-2- Abrimos el repositorio de la API con el editor de código y ejecutamos uno de los siguientes códigos por la términal en función de si deseamos hacer cmabios en el repositorio o no:
+2- Abrimos el repositorio de la API con el editor de código y ejecutamos uno de los siguientes códigos por la términal en función de si deseamos hacer cambios en el repositorio o no:
 
 npm run dev
 
 npm start
 
-3- Si se desea realizar el testing, simplemente ejecutamos el siguiente comando por la términal de nuestro editor de código:
+3- Ejecutamos el siguiente comando en un nuevo terminal para generar la base de datos a la vez que la sembramos con los datos de empleados que hemos pregenerado:
+
+node ./data/employees.data.js
+
+Tras ejecutarlo y comprobar que se ha generado la base de datos y se han añadido los datos pregenerados de empleados, podemos cerrar este segundo terminal.
+
+4- Si se desea realizar el testing, simplemente ejecutamos el siguiente comando por la términal de nuestro editor de código:
 
 npm test
 
